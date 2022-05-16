@@ -24,6 +24,12 @@ $(".saveBtn").on("click", function () {
 
     function updateCss() {
         $(".time-block").each(function () {
+            var divNumber = $(this).attr("id")
+            if (divNumber < currentTime) {
+                $(this).removeClass("future");
+                $(this).removeClass("present");
+                $(this).addClass("past");
+            }
         })
     }
 
